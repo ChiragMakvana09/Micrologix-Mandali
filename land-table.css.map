@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/features/dashboard/components/land-table/land-table.scss"],
-  "sourcesContent": [".land-table {\n  --bs-table-bg: transparent;\n  font-variant-numeric: tabular-nums;\n\n  th {\n    font-weight: 600;\n    white-space: nowrap;\n    color: var(--bs-secondary-color);\n  }\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,iBAAA;AACA,wBAAA;;AAEA,CAJF,WAIE;AACE,eAAA;AACA,eAAA;AACA,SAAA,IAAA;;",
-  "names": []
-}

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/layout/bottom-menu/bottom-menu.scss"],
-  "sourcesContent": [".bottom-menu {\n  position: fixed;\n  inset: auto 0 0 0;\n  z-index: 1020;\n  height: calc(var(--app-bottom-menu-height) + env(safe-area-inset-bottom));\n  padding-bottom: env(safe-area-inset-bottom);\n  background: var(--app-card-bg);\n  border-top: 1px solid var(--app-border);\n}\n\n.bottom-menu__inner {\n  height: 100%;\n  display: grid;\n  grid-auto-flow: column;\n  grid-auto-columns: 1fr;\n}\n\n.bottom-menu__item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0.15rem;\n  font-size: 0.72rem;\n  color: var(--bs-secondary-color);\n  text-decoration: none;\n\n  .bi {\n    font-size: 1.3rem;\n  }\n\n  &.is-active {\n    color: var(--app-primary);\n    font-weight: 600;\n  }\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,YAAA;AACA,SAAA,KAAA,EAAA,EAAA;AACA,WAAA;AACA,UAAA,KAAA,IAAA,0BAAA,EAAA,IAAA;AACA,kBAAA,IAAA;AACA,cAAA,IAAA;AACA,cAAA,IAAA,MAAA,IAAA;;AAGF,CAAA;AACE,UAAA;AACA,WAAA;AACA,kBAAA;AACA,qBAAA;;AAGF,CAAA;AACE,WAAA;AACA,kBAAA;AACA,eAAA;AACA,mBAAA;AACA,OAAA;AACA,aAAA;AACA,SAAA,IAAA;AACA,mBAAA;;AAEA,CAVF,kBAUE,CAAA;AACE,aAAA;;AAGF,CAdF,iBAcE,CAAA;AACE,SAAA,IAAA;AACA,eAAA;;",
-  "names": []
-}

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/shared/components/stat-row/stat-row.scss"],
-  "sourcesContent": [":host {\n  display: block;\n}\n\n.stat-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 1rem;\n  padding: 0.4rem 0;\n}\n\n:host(:not(:first-child)) .stat-row {\n  border-top: 1px dashed var(--app-border);\n}\n\n.stat-row__label {\n  color: var(--bs-secondary-color);\n}\n\n.stat-row__value {\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  text-align: right;\n}\n"],
-  "mappings": ";AAAA;AACE,WAAA;;AAGF,CAAA;AACE,WAAA;AACA,mBAAA;AACA,eAAA;AACA,OAAA;AACA,WAAA,OAAA;;AAGF,MAAA,CAAA,IAAA,CAAA,cAAA,CARA;AASE,cAAA,IAAA,OAAA,IAAA;;AAGF,CAAA;AACE,SAAA,IAAA;;AAGF,CAAA;AACE,eAAA;AACA,wBAAA;AACA,cAAA;;",
-  "names": []
-}

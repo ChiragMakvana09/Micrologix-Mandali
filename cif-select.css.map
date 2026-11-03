@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/features/dashboard/components/cif-select/cif-select.scss"],
-  "sourcesContent": [".cif-select {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 0.35rem 0.6rem 0.35rem 0.9rem;\n  background: var(--app-card-bg);\n  border: 1px solid var(--app-border);\n  border-radius: var(--app-radius);\n  box-shadow: var(--app-shadow);\n}\n\n.cif-select__icon {\n  color: var(--app-primary);\n  font-size: 1.3rem;\n}\n\n.cif-select__control {\n  flex: 1;\n  min-height: 2.75rem;\n  border: 0;\n  background: transparent;\n  color: var(--bs-body-color);\n  font-size: 1.05rem;\n  font-weight: 600;\n  text-align: center;\n\n  &:focus {\n    outline: none;\n  }\n}\n\n.cif-select:focus-within {\n  border-color: var(--app-primary);\n  box-shadow: 0 0 0 0.2rem var(--app-primary-soft);\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AACA,WAAA,QAAA,OAAA,QAAA;AACA,cAAA,IAAA;AACA,UAAA,IAAA,MAAA,IAAA;AACA,iBAAA,IAAA;AACA,cAAA,IAAA;;AAGF,CAAA;AACE,SAAA,IAAA;AACA,aAAA;;AAGF,CAAA;AACE,QAAA;AACA,cAAA;AACA,UAAA;AACA,cAAA;AACA,SAAA,IAAA;AACA,aAAA;AACA,eAAA;AACA,cAAA;;AAEA,CAVF,mBAUE;AACE,WAAA;;AAIJ,CA/BA,UA+BA;AACE,gBAAA,IAAA;AACA,cAAA,EAAA,EAAA,EAAA,OAAA,IAAA;;",
-  "names": []
-}
