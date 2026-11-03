@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "src/app/core/services/theme.service.ts"
+  ],
+  "sourcesContent": [
+    "import { DOCUMENT } from '@angular/common';\nimport { Injectable, effect, inject, signal } from '@angular/core';\n\nexport type Theme = 'light' | 'dark';\n\nconst STORAGE_KEY = 'app-theme';\n\n/** Dark / light mode. Auto-detects the OS preference on first visit and remembers the choice. */\n@Injectable({ providedIn: 'root' })\nexport class ThemeService {\n  private readonly document = inject(DOCUMENT);\n\n  readonly theme = signal<Theme>(this.initialTheme());\n\n  constructor() {\n    effect(() => {\n      const theme = this.theme();\n      this.document.documentElement.setAttribute('data-bs-theme', theme);\n      try {\n        localStorage.setItem(STORAGE_KEY, theme);\n      } catch {\n        /* storage may be blocked; the theme still applies for this session */\n      }\n    });\n  }\n\n  toggle(): void {\n    this.theme.update((t) => (t === 'dark' ? 'light' : 'dark'));\n  }\n\n  private initialTheme(): Theme {\n    try {\n      const saved = localStorage.getItem(STORAGE_KEY);\n      if (saved === 'light' || saved === 'dark') return saved;\n    } catch {\n      /* ignore */\n    }\n    return globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';\n  }\n}\n"
+  ],
+  "mappings": ";;;;;;;;;;;AAKA,IAAM,cAAc;AAId,IAAO,eAAP,MAAO,cAAY;EACN,WAAW,OAAO,QAAQ;EAElC,QAAQ;IAAc,KAAK,aAAY;;;;;;EAEhD,cAAA;AACE,WAAO,MAAK;AACV,YAAM,QAAQ,KAAK,MAAK;AACxB,WAAK,SAAS,gBAAgB,aAAa,iBAAiB,KAAK;AACjE,UAAI;AACF,qBAAa,QAAQ,aAAa,KAAK;MACzC,QAAQ;MAER;IACF,CAAC;EACH;EAEA,SAAc;AACZ,SAAK,MAAM,OAAO,CAAC,MAAO,MAAM,SAAS,UAAU,MAAO;EAC5D;EAEQ,eAAqB;AAC3B,QAAI;AACF,YAAM,QAAQ,aAAa,QAAQ,WAAW;AAC9C,UAAI,UAAU,WAAW,UAAU;AAAQ,eAAO;IACpD,QAAQ;IAER;AACA,WAAO,WAAW,aAAa,8BAA8B,EAAE,UAAU,SAAS;EACpF;;qCA7BW,eAAY;EAAA;4EAAZ,eAAY,SAAZ,cAAY,WAAA,YADC,OAAM,CAAA;;;sEACnB,cAAY,CAAA;UADxB;WAAW,EAAE,YAAY,OAAM,CAAE;;;",
+  "names": [],
+  "debugId": "d4e72842-f14e-52b6-afdd-25f7eadd0999"
+}

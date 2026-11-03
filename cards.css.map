@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/cards/cards.scss"],
+  "sourcesContent": [".cards {\n  display: grid;\n  gap: 0.85rem;\n}\n\n.cards__item {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 1rem;\n  min-height: 4.25rem;\n  padding: 1rem 1.1rem;\n  border-radius: var(--app-radius);\n  background: var(--app-card-bg);\n  border: 1px solid var(--app-border);\n  box-shadow: var(--app-shadow);\n  color: var(--bs-body-color);\n  text-decoration: none;\n  font-weight: 600;\n}\n\n@media (min-width: 768px) {\n  .cards {\n    grid-template-columns: 1fr 1fr;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,OAAA;;AAGF,CAAA;AACE,WAAA;AACA,mBAAA;AACA,eAAA;AACA,OAAA;AACA,cAAA;AACA,WAAA,KAAA;AACA,iBAAA,IAAA;AACA,cAAA,IAAA;AACA,UAAA,IAAA,MAAA,IAAA;AACA,cAAA,IAAA;AACA,SAAA,IAAA;AACA,mBAAA;AACA,eAAA;;AAGF,QAAA,WAAA;AACE,GAtBF;AAuBI,2BAAA,IAAA;;;",
+  "names": []
+}

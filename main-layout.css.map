@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/layout/main-layout/main-layout.scss"],
+  "sourcesContent": [".shell--desktop {\n  --app-sidebar-width: 260px;\n}\n\n.app-main {\n  padding-top: 1rem;\n  padding-bottom: calc(var(--app-bottom-menu-height) + 1.5rem + env(safe-area-inset-bottom));\n}\n\n.shell--desktop .app-main {\n  padding-bottom: 1.75rem;\n  margin-left: var(--app-sidebar-width);\n}\n\n.shell--desktop app-header {\n  display: block;\n  margin-left: var(--app-sidebar-width);\n}\n\n@media (min-width: 992px) {\n  :host {\n    display: block;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,uBAAA;;AAGF,CAAA;AACE,eAAA;AACA,kBAAA,KAAA,IAAA,0BAAA,EAAA,OAAA,EAAA,IAAA;;AAGF,CATA,eASA,CALA;AAME,kBAAA;AACA,eAAA,IAAA;;AAGF,CAdA,eAcA;AACE,WAAA;AACA,eAAA,IAAA;;AAGF,QAAA,WAAA;AACE;AACE,aAAA;;;",
+  "names": []
+}

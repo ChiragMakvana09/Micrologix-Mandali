@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/product/product-page.scss"],
+  "sourcesContent": [".product-page {\n  display: grid;\n  gap: 1rem;\n}\n\n.product-page__head {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.product-page__link {\n  display: inline-block;\n  margin-top: 0.6rem;\n  font-weight: 600;\n  color: var(--app-primary);\n  text-decoration: none;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,OAAA;;AAGF,CAAA;AACE,WAAA;AACA,mBAAA;AACA,eAAA;;AAGF,CAAA;AACE,WAAA;AACA,cAAA;AACA,eAAA;AACA,SAAA,IAAA;AACA,mBAAA;;",
+  "names": []
+}

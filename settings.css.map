@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/settings/settings.scss"],
+  "sourcesContent": [".settings {\n  display: grid;\n  gap: 1rem;\n}\n\n.settings__card {\n  background: var(--app-card-bg);\n  border: 1px solid var(--app-border);\n  border-radius: var(--app-radius);\n  padding: 0.4rem 1rem;\n  box-shadow: var(--app-shadow);\n}\n\n.settings__row {\n  display: flex;\n  justify-content: space-between;\n  gap: 1rem;\n  padding: 0.85rem 0;\n  border-bottom: 1px dashed var(--app-border);\n  color: var(--bs-secondary-color);\n\n  &:last-child {\n    border-bottom: 0;\n  }\n\n  strong {\n    color: var(--bs-body-color);\n    text-align: right;\n    word-break: break-all;\n  }\n}\n\n.settings__chip {\n  border: 1px solid var(--app-border);\n  background: var(--app-primary-soft);\n  color: var(--app-primary);\n  border-radius: 999px;\n  padding: 0.2rem 0.8rem;\n  font-weight: 600;\n}\n\n.settings__logout {\n  min-height: 2.75rem;\n  border: 0;\n  border-radius: 0.9rem;\n  background: #dc2626;\n  color: #fff;\n  font-weight: 600;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,OAAA;;AAGF,CAAA;AACE,cAAA,IAAA;AACA,UAAA,IAAA,MAAA,IAAA;AACA,iBAAA,IAAA;AACA,WAAA,OAAA;AACA,cAAA,IAAA;;AAGF,CAAA;AACE,WAAA;AACA,mBAAA;AACA,OAAA;AACA,WAAA,QAAA;AACA,iBAAA,IAAA,OAAA,IAAA;AACA,SAAA,IAAA;;AAEA,CARF,aAQE;AACE,iBAAA;;AAGF,CAZF,cAYE;AACE,SAAA,IAAA;AACA,cAAA;AACA,cAAA;;AAIJ,CAAA;AACE,UAAA,IAAA,MAAA,IAAA;AACA,cAAA,IAAA;AACA,SAAA,IAAA;AACA,iBAAA;AACA,WAAA,OAAA;AACA,eAAA;;AAGF,CAAA;AACE,cAAA;AACA,UAAA;AACA,iBAAA;AACA,cAAA;AACA,SAAA;AACA,eAAA;;",
+  "names": []
+}
