@@ -1,1 +1,0 @@
-import{B as Oy}from"./chunk-B_CyJvqb.js";import{m as g}from"./main-KT5OY6XB.js";var i=class r{transform(t){return g(t)}static ɵfac=function(a){return new(a||r)};static ɵpipe=Oy({name:`pacsDate`,type:r,pure:!0})};export{i as t};
