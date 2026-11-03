@@ -1,0 +1,29 @@
+<section class="settings">
+  <h1 class="section-title">સેટિંગ્સ</h1>
+
+  <div class="settings__card">
+    <div class="settings__row">
+      <span>થીમ</span>
+      <button type="button" class="settings__chip" (click)="theme.toggle()">
+        {{ theme.theme() === 'dark' ? 'ડાર્ક' : 'લાઈટ' }}
+      </button>
+    </div>
+    <div class="settings__row">
+      <span>સ્ત્રોત</span>
+      <strong>{{ session.mode() === 'live' ? 'WhatsApp લિંક' : 'ફ્રી ડેમો' }}</strong>
+    </div>
+    <div class="settings__row">
+      <span>ભાષા</span>
+      <strong>ગુજરાતી</strong>
+    </div>
+    <div class="settings__row">
+      <span>વર્ઝન</span>
+      <strong>0.1.0 ફ્રી</strong>
+    </div>
+    @if (session.credentials(); as c) {
+      <div class="settings__row"><span>મોબાઈલ</span><strong>{{ c.mobile }}</strong></div>
+      <div class="settings__row"><span>શોર્ટ નેમ</span><strong>{{ c.businessCode }}</strong></div>
+      <div class="settings__row"><span>બિઝનેસ નંબર</span><strong>{{ c.businessNumber }}</strong></div>
+    }
+  </div>
+</section>

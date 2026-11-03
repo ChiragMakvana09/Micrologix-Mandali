@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './core/services/theme.service';
+import { WhatsappBootstrapService } from './core/services/whatsapp-bootstrap.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,5 @@ import { ThemeService } from './core/services/theme.service';
   template: '<router-outlet />',
 })
 export class App {
-  // Injected eagerly so the saved/auto-detected theme is applied on startup.
-  constructor(_theme: ThemeService) {}
+  constructor(_theme: ThemeService, _link: WhatsappBootstrapService) {}
 }

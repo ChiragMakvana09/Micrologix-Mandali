@@ -1,9 +1,12 @@
+import { ProductAccount } from './api.model';
+
 /** એફ.ડી. - fixed deposit summary. */
 export interface FdSummary {
   /** કુલ રસીદ */
   totalReceipts: number;
   /** કુલ બેલેન્સ */
   totalBalance: number;
-  /** પાકતી રસીદ */
+  /** પાકતી રસીદ (next 90 days) */
   maturingReceipts: number;
+  accounts: ProductAccount[];
 }

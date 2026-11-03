@@ -1,0 +1,81 @@
+@if (!dashboard()) {
+  <p class="text-center text-secondary py-5">
+    પહેલા ડેશબોર્ડ પર CIF પસંદ કરો.
+    <a routerLink="/dashboard">ડેશબોર્ડ</a>
+  </p>
+} @else if (key() === 'milkat') {
+  <app-land-table [data]="dashboard()!.land" />
+} @else {
+  <div class="product-page">
+    <header class="product-page__head">
+      <h1 class="section-title">{{ title() }}</h1>
+      <a routerLink="/dashboard">પાછા</a>
+    </header>
+
+    @if (key() === 'share') {
+      <app-stat-card title="શેર" icon="pie-chart-fill">
+        <app-stat-row label="બેલેન્સ" [value]="dashboard()!.share.balance | inrNumber" />
+        @if (dashboard()!.share.dividend > 0) {
+          <app-stat-row label="ડિવિડંડ" [value]="dashboard()!.share.dividend | inrNumber" />
+        }
+      </app-stat-card>
+    }
+
+    @if (key() === 'loanDue') {
+      <app-stat-card title="ભરવાપાત્ર ધિરાણ" icon="cash-coin" [badge]="dashboard()!.loan.loanRef">
+        <app-stat-row label="તારીખ સુધી" [value]="dashboard()!.loan.asOf" />
+        <app-stat-row label="કુલ બાકી" [value]="dashboard()!.loan.totalOutstanding | inrNumber" />
+        <app-stat-row label="ભરવાપાત્ર મુદલ" [value]="dashboard()!.loan.duePrincipal | inrNumber" />
+        <app-stat-row label="ભરવાપાત્ર વ્યાજ" [value]="dashboard()!.loan.dueInterest | inrNumber:2" />
+      </app-stat-card>
+    }
+
+    @if (accounts().length === 0) {
+      <p class="text-center text-secondary py-4">આ પ્રોડક્ટ માટે કોઈ ખાતું મળ્યું નથી.</p>
+    }
+
+    @for (acc of accounts(); track $index) {
+      <app-stat-card [title]="'ખાતા નં. ' + accNo(acc)" icon="wallet2">
+        @if (key() === 'savings' || key() === 'share') {
+          <app-stat-row label="બેલેન્સ" [value]="balance(acc) | inrNumber" />
+          @if (acc.h_name) {
+            <app-stat-row label="પ્રોડક્ટ" [value]="acc.h_name" />
+          }
+        }
+
+        @if (key() === 'fd') {
+          <app-stat-row label="FDR No." [value]="fd(acc).fdr_no || 'N/A'" />
+          <app-stat-row label="FD તારીખ" [value]="fd(acc).first_date | pacsDate" />
+          <app-stat-row label="FD રકમ" [value]="balance(acc) | inrNumber" />
+          <app-stat-row label="મુદત" [value]="term(acc) + ' @' + fd(acc).interest + '%'" />
+          <app-stat-row label="પાકતી તારીખ" [value]="fd(acc).last_date | pacsDate" />
+          <app-stat-row label="પાકતી રકમ" [value]="fd(acc).total_amount | inrNumber" />
+          @if (fd(acc).fd_type) {
+            <app-stat-row label="FD પ્રકાર" [value]="fd(acc).fd_type" />
+          }
+        }
+
+        @if (key() === 'loan') {
+          <app-stat-row label="પ્રોડક્ટ" [value]="(acc.h_name || '-') + ' (' + (acc.int_ret || '-') + '%)'" />
+          <app-stat-row label="હેતુ" [value]="acc.pak1_name || '-'" />
+          <app-stat-row label="ધિરાણ બાકી" [value]="balance(acc) | inrNumber" />
+          <app-stat-row label="મુવી રકમ" [value]="acc.mudatvitirakam | inrNumber" />
+          <app-stat-row label="મુવી તારીખ" [value]="(acc.due_date_from || acc.due_date) | pacsDate" />
+        }
+
+        @if (key() === 'loanDue') {
+          <app-stat-row label="પ્રોડક્ટ" [value]="acc.h_name || '-'" />
+          <app-stat-row label="હેતુ" [value]="acc.pak1_name || '-'" />
+          <app-stat-row label="ધિરાણ બાકી" [value]="balance(acc) | inrNumber" />
+          <app-stat-row label="ભરવાપાત્ર ધિરાણ" [value]="acc.demand | inrNumber" />
+          <app-stat-row label="વ્યાજ" [value]="acc.vyajbaki | inrNumber:2" />
+          <app-stat-row label="ભરવાની તા." [value]="acc.due_date | pacsDate" />
+        }
+
+        @if (key() !== 'loanDue' && key() !== 'milkat') {
+          <a class="product-page__link" [routerLink]="statementLink(acc, $index)">મિની સ્ટેટમેન્ટ</a>
+        }
+      </app-stat-card>
+    }
+  </div>
+}

@@ -1,0 +1,39 @@
+<section class="cards">
+  <h1 class="section-title">કાર્ડ્સ</h1>
+
+  @if (dashboard(); as d) {
+    @if (d.member?.kcc_no) {
+      <article class="cards__plastic">
+        <small>KCC / એટીએમ</small>
+        <strong>{{ d.member.kcc_no }}</strong>
+        <span>{{ d.member.name1 }}</span>
+      </article>
+    }
+    <a class="cards__item" routerLink="/products/share">
+      <span>{{ labels.share }}</span>
+      <strong>₹ {{ d.share.balance | inrNumber }}</strong>
+    </a>
+    <a class="cards__item" routerLink="/products/savings">
+      <span>{{ labels.savings }}</span>
+      <strong>₹ {{ d.savings.totalBalance | inrNumber }}</strong>
+    </a>
+    <a class="cards__item" routerLink="/products/fd">
+      <span>{{ labels.fd }}</span>
+      <strong>₹ {{ d.fd.totalBalance | inrNumber }}</strong>
+    </a>
+    <a class="cards__item" routerLink="/products/loan">
+      <span>{{ labels.loan }}</span>
+      <strong>₹ {{ d.loan.totalOutstanding | inrNumber }}</strong>
+    </a>
+    <a class="cards__item" routerLink="/products/loan-due">
+      <span>{{ labels.loanDue }}</span>
+      <strong>₹ {{ (d.loan.duePrincipal + d.loan.dueInterest) | inrNumber }}</strong>
+    </a>
+    <a class="cards__item" routerLink="/products/land">
+      <span>{{ labels.milkat }}</span>
+      <strong>{{ d.land.totalLand }}</strong>
+    </a>
+  } @else {
+    <p class="text-center text-secondary py-4">પહેલા ડેશબોર્ડ પર CIF પસંદ કરો.</p>
+  }
+</section>

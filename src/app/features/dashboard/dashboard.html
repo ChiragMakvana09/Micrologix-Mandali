@@ -9,15 +9,37 @@
   } @else if (dashboard() === undefined) {
     <p class="dashboard__hint text-danger">
       <i class="bi bi-exclamation-triangle-fill"></i>
-      ડેટા લોડ થઈ શક્યો નથી. ફરી પ્રયત્ન કરો.
+      ડેટા લોડ થઈ શક્યો નથી.
+      <button type="button" class="dashboard__retry" (click)="retry()">ફરી પ્રયત્ન કરો</button>
     </p>
   } @else if (dashboard(); as d) {
+    @if (d.member; as m) {
+      <a class="dashboard__hero" routerLink="/member">
+        <div>
+          <small>સભાસદ</small>
+          <strong>{{ m.name1 }}</strong>
+          <span>નં. {{ m.sabhasad_no }}</span>
+        </div>
+        <i class="bi bi-chevron-right"></i>
+      </a>
+    }
+
     <div class="dashboard__grid">
-      <app-share-card [data]="d.share" />
-      <app-savings-card [data]="d.savings" />
-      <app-loan-card [data]="d.loan" />
-      <app-fd-card [data]="d.fd" />
-      <app-land-table class="dashboard__wide" [data]="d.land" />
+      <a class="dashboard__card" routerLink="/products/share">
+        <app-share-card [data]="d.share" />
+      </a>
+      <a class="dashboard__card" routerLink="/products/savings">
+        <app-savings-card [data]="d.savings" />
+      </a>
+      <a class="dashboard__card" routerLink="/products/loan-due">
+        <app-loan-card [data]="d.loan" />
+      </a>
+      <a class="dashboard__card" routerLink="/products/fd">
+        <app-fd-card [data]="d.fd" />
+      </a>
+      <a class="dashboard__wide dashboard__card" routerLink="/products/land">
+        <app-land-table [data]="d.land" />
+      </a>
     </div>
   } @else {
     <div class="dashboard__hint" role="status">

@@ -1,0 +1,40 @@
+.settings {
+  display: grid;
+  gap: 1rem;
+}
+
+.settings__card {
+  background: var(--app-card-bg);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  padding: 0.4rem 1rem;
+  box-shadow: var(--app-shadow);
+}
+
+.settings__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed var(--app-border);
+  color: var(--bs-secondary-color);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  strong {
+    color: var(--bs-body-color);
+    text-align: right;
+    word-break: break-all;
+  }
+}
+
+.settings__chip {
+  border: 1px solid var(--app-border);
+  background: var(--app-primary-soft);
+  color: var(--app-primary);
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+  font-weight: 600;
+}

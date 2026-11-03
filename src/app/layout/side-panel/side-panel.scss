@@ -29,6 +29,15 @@
     transform: none;
     visibility: visible;
   }
+
+  &.is-persistent {
+    transform: none;
+    visibility: visible;
+    width: var(--app-sidebar-width, 260px);
+    border-right: 1px solid var(--app-border);
+    box-shadow: none;
+    z-index: 1035;
+  }
 }
 
 .side-panel__profile {
@@ -38,6 +47,7 @@
   padding: 1.25rem 1rem;
   background: var(--app-header-bg);
   color: var(--app-header-fg);
+  text-decoration: none;
 }
 
 .side-panel__avatar {
@@ -53,6 +63,7 @@
 .side-panel__nav {
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: 0.5rem;
 }
 

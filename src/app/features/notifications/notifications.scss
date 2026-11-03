@@ -1,0 +1,23 @@
+.notices {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.notices__item {
+  background: var(--app-card-bg);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow);
+  padding: 1rem 1.1rem;
+
+  strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--bs-secondary-color);
+    font-size: 0.92rem;
+  }
+}

@@ -1,8 +1,12 @@
 <header class="app-header">
   <div class="app-container app-header__inner">
-    <button type="button" class="app-header__btn" aria-label="મેનુ" (click)="menuClick.emit()">
-      <i class="bi bi-list"></i>
-    </button>
+    @if (showMenu()) {
+      <button type="button" class="app-header__btn" aria-label="મેનુ" (click)="menuClick.emit()">
+        <i class="bi bi-list"></i>
+      </button>
+    } @else {
+      <span class="app-header__spacer"></span>
+    }
 
     <span class="app-header__brand">Micrologix ERP</span>
 
@@ -15,9 +19,12 @@
       >
         <i class="bi" [class]="themeService.theme() === 'dark' ? 'bi-sun-fill' : 'bi-moon-stars-fill'"></i>
       </button>
-      <button type="button" class="app-header__btn" aria-label="નોટિફિકેશન">
+      <a routerLink="/notifications" class="app-header__btn" aria-label="નોટિફિકેશન">
         <i class="bi bi-bell-fill"></i>
-      </button>
+        @if (notices.unread(); as count) {
+          <span class="app-header__badge">{{ count > 9 ? '9+' : count }}</span>
+        }
+      </a>
     </div>
   </div>
 </header>

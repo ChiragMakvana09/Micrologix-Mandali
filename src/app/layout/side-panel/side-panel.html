@@ -1,13 +1,20 @@
-<div class="side-backdrop" [class.is-open]="open()" (click)="closed.emit()"></div>
+@if (!persistent()) {
+  <div class="side-backdrop" [class.is-open]="open()" (click)="closed.emit()"></div>
+}
 
-<aside class="side-panel" [class.is-open]="open()" [attr.aria-hidden]="!open()">
-  <div class="side-panel__profile">
+<aside
+  class="side-panel"
+  [class.is-open]="open()"
+  [class.is-persistent]="persistent()"
+  [attr.aria-hidden]="persistent() ? null : !open()"
+>
+  <a class="side-panel__profile" routerLink="/member" (click)="persistent() ? null : closed.emit()">
     <span class="side-panel__avatar"><i class="bi bi-person-fill"></i></span>
     <div>
-      <strong>Micrologix ERP</strong>
-      <small class="d-block opacity-75">સહકારી મંડળી</small>
+      <strong>{{ memberName() }}</strong>
+      <small class="d-block opacity-75">{{ memberMeta() }}</small>
     </div>
-  </div>
+  </a>
 
   <nav class="side-panel__nav">
     @for (item of items; track item.route) {
@@ -15,7 +22,7 @@
         class="side-panel__link"
         [routerLink]="item.route"
         routerLinkActive="is-active"
-        (click)="closed.emit()"
+        (click)="persistent() ? null : closed.emit()"
       >
         <i class="bi" [class]="'bi-' + item.icon"></i>
         {{ item.label }}

@@ -1,0 +1,56 @@
+<section class="tx">
+  <h1 class="section-title">વ્યવહારો / મિની સ્ટેટમેન્ટ</h1>
+
+  @if (!dashboard()) {
+    <p class="text-center text-secondary py-4">પહેલા ડેશબોર્ડ પર CIF પસંદ કરો.</p>
+  } @else if (statement(); as st) {
+    <app-stat-card [title]="statementTitle()" icon="receipt">
+      <app-stat-row label="ખાતા નં." [value]="st.acc_no || '-'" />
+      @if (fdNo()) {
+        <app-stat-row label="FDR No." [value]="fdNo()" />
+      }
+      <app-stat-row label="બેલેન્સ" [value]="st.balance | inrNumber:2" />
+    </app-stat-card>
+
+    <div class="tx__list">
+      @for (row of st.data || []; track $index) {
+        @let t = txAmount(row);
+        <div class="tx__item">
+          <div>
+            <strong>{{ (row.date1 || row.date) | pacsDate }}</strong>
+            <small>{{ row.remark || '' }}</small>
+          </div>
+          <span [class.text-success]="t.typ === 'Cr'" [class.text-danger]="t.typ === 'Dr'">
+            ₹{{ t.amt | inrNumber:2 }} {{ t.typ }}
+          </span>
+        </div>
+      } @empty {
+        <p class="text-center text-secondary py-3">કોઈ ટ્રાન્ઝેક્શન મળ્યાં નથી.</p>
+      }
+    </div>
+    <a routerLink="/transactions">બીજું ખાતું</a>
+  } @else if (productKey() && selectedAccounts().length) {
+    <p class="text-secondary">મિની સ્ટેટમેન્ટ માટે ખાતું પસંદ કરો.</p>
+    <div class="tx__grid">
+      @for (acc of selectedAccounts(); track $index) {
+        <a class="tx__pick" [routerLink]="['/transactions', productKey(), $index]">
+          {{ pickLabel(acc) }}
+        </a>
+      }
+    </div>
+  } @else {
+    <p class="text-secondary">પ્રોડક્ટ પસંદ કરો</p>
+    <div class="tx__grid">
+      @for (key of products; track key) {
+        <a class="tx__pick" [routerLink]="['/transactions', key]">{{ labels[key] }}</a>
+      }
+    </div>
+  }
+
+  @if (loading()) {
+    <p class="text-center text-secondary py-3">લોડ થઈ રહ્યું છે…</p>
+  }
+  @if (error()) {
+    <p class="text-danger">{{ error() }}</p>
+  }
+</section>

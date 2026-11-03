@@ -1,0 +1,12 @@
+<section class="notices">
+  <h1 class="section-title">સૂચનાઓ</h1>
+
+  @for (item of notices.items(); track item.id) {
+    <article class="notices__item">
+      <strong>{{ item.title }}</strong>
+      <p>{{ item.body }}</p>
+    </article>
+  } @empty {
+    <p class="text-center text-secondary py-4">કોઈ સૂચના નથી.</p>
+  }
+</section>

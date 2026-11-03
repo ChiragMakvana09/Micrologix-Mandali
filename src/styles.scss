@@ -2,3 +2,13 @@
 @use 'styles/theme-light';
 @use 'styles/theme-dark';
 @use 'styles/components/layout';
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

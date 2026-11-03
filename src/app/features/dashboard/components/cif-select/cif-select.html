@@ -1,7 +1,7 @@
 <label class="cif-select">
   <span class="cif-select__icon"><i class="bi bi-person-vcard-fill"></i></span>
   <select class="cif-select__control" [value]="selectedId()" (change)="onChange($event)" aria-label="Select CIF">
-    <option value="">Select CIF</option>
+    <option value="">CIF પસંદ કરો</option>
     @for (cif of cifs(); track cif.id) {
       <option [value]="cif.id" [selected]="cif.id === selectedId()">{{ cif.cifNo }} - {{ cif.name }}</option>
     }

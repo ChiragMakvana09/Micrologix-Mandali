@@ -10,6 +10,12 @@ body {
   padding-inline: 1rem;
 }
 
+@media (min-width: 992px) {
+  .app-container {
+    --app-max-width: 1120px;
+  }
+}
+
 .section-title {
   font-size: 1.15rem;
   font-weight: 700;

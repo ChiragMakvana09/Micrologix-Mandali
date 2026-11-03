@@ -1,8 +1,16 @@
-<app-header (menuClick)="panelOpen.set(true)" />
-<app-side-panel [open]="panelOpen()" (closed)="panelOpen.set(false)" />
+<div class="shell" [class.shell--desktop]="isDesktop()">
+  <app-header [showMenu]="!isDesktop()" (menuClick)="panelOpen.set(true)" />
+  <app-side-panel
+    [open]="panelOpen() || isDesktop()"
+    [persistent]="isDesktop()"
+    (closed)="panelOpen.set(false)"
+  />
 
-<main class="app-container app-main">
-  <router-outlet />
-</main>
+  <main class="app-container app-main">
+    <router-outlet />
+  </main>
 
-<app-bottom-menu />
+  @if (!isDesktop()) {
+    <app-bottom-menu />
+  }
+</div>

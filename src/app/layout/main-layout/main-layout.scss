@@ -1,4 +1,24 @@
+.shell--desktop {
+  --app-sidebar-width: 260px;
+}
+
 .app-main {
   padding-top: 1rem;
   padding-bottom: calc(var(--app-bottom-menu-height) + 1.5rem + env(safe-area-inset-bottom));
+}
+
+.shell--desktop .app-main {
+  padding-bottom: 1.75rem;
+  margin-left: var(--app-sidebar-width);
+}
+
+.shell--desktop app-header {
+  display: block;
+  margin-left: var(--app-sidebar-width);
+}
+
+@media (min-width: 992px) {
+  :host {
+    display: block;
+  }
 }

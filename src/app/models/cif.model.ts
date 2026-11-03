@@ -1,7 +1,7 @@
-/** A customer / member (CIF = Customer Information File). */
+/** A customer / member (CIF = sabhasad). */
 export interface Cif {
   id: string;
-  /** CIF number shown in the dropdown, e.g. "CIF-000101" */
+  /** CIF / sabhasad number shown in the dropdown */
   cifNo: string;
   name: string;
   village?: string;

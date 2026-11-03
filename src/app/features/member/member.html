@@ -1,0 +1,23 @@
+@if (member(); as m) {
+  <app-stat-card title="સભાસદ વિગત" icon="person-badge-fill">
+    <app-stat-row label="નામ" [value]="m.name1 || '-'" />
+    <app-stat-row label="સભાસદ નં." [value]="m.sabhasad_no" />
+    <app-stat-row label="શેર" [value]="m.share_amount | inrNumber" />
+    <app-stat-row label="સેવિંગ્સ" [value]="m.savings_amount | inrNumber" />
+    <app-stat-row label="FD" [value]="m.fd_amount | inrNumber" />
+    <app-stat-row label="ધિરાણ બાકી" [value]="m.dhiran_amount | inrNumber" />
+    @if (m.divi_amount) {
+      <app-stat-row label="ડિવિડંડ" [value]="m.divi_amount | inrNumber" />
+    }
+    <app-stat-row label="વારસદાર" [value]="(m.varsdar_name1 || '-') + (m.varsdar_relation ? ' (' + m.varsdar_relation + ')' : '')" />
+    <app-stat-row label="જમીન" [value]="land()" />
+    <app-stat-row label="KCC નં." [value]="m.kcc_no || '-'" />
+    <app-stat-row label="બચત ખાતા નં." [value]="m.bank_acc || '-'" />
+    <app-stat-row label="IFSC" [value]="m.ifsc || '-'" />
+  </app-stat-card>
+} @else {
+  <p class="text-center text-secondary py-5">
+    પહેલા ડેશબોર્ડ પર CIF પસંદ કરો.
+    <a routerLink="/dashboard">ડેશબોર્ડ</a>
+  </p>
+}
