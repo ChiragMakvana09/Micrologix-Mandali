@@ -1,19 +1,39 @@
 <div class="login">
   <div class="login__card">
+
     <div class="login__brand">
-      <span class="login__logo"><i class="bi bi-whatsapp"></i></span>
-      <h1>Micrologix ERP</h1>
+      <span class="login__logo">
+        <i class="bi bi-whatsapp"></i>
+      </span>
+
+      <h1>સહકારી મંડળી</h1>
+
       <p>સહકારી મંડળી — WhatsApp લિંકથી ખુલે છે</p>
     </div>
 
-    <p class="login__hint">{{ hint() }}</p>
-
-    <p class="login__sample">
-      <code>?business_number=91XXXXXXXXXX&amp;business_code=SHORT&amp;sabhasad_mobile=91YYYYYYYYYY</code>
+    <p class="login__hint">
+      {{ hint() }}
     </p>
 
-    <button type="button" class="login__btn login__btn--ghost" (click)="demo()">
+    @if (loading()) {
+      <p class="login__hint">
+        મંડળીનું ડેટા લોડ થઈ રહ્યું છે...
+      </p>
+    }
+
+    @if (error()) {
+      <p class="login__error">
+        {{ error() }}
+      </p>
+    }
+
+    <button
+      type="button"
+      class="login__btn login__btn--ghost"
+      (click)="demo()"
+    >
       ફ્રી ડેમો જુઓ
     </button>
+
   </div>
 </div>
