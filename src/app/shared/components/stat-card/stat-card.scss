@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+.stat-card {
+  height: 100%;
+  background: var(--app-card-bg);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow);
+  padding: 1rem 1.1rem;
+}
+
+.stat-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.stat-card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.stat-card__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  background: var(--app-primary-soft);
+  color: var(--app-primary);
+}
+
+.stat-card__badge {
+  font-variant-numeric: tabular-nums;
+}

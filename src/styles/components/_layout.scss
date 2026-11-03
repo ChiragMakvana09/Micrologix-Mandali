@@ -1,0 +1,17 @@
+body {
+  background: var(--app-bg);
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: var(--app-max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}

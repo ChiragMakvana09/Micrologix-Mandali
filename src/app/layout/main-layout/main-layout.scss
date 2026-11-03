@@ -1,0 +1,4 @@
+.app-main {
+  padding-top: 1rem;
+  padding-bottom: calc(var(--app-bottom-menu-height) + 1.5rem + env(safe-area-inset-bottom));
+}

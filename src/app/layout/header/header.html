@@ -1,0 +1,23 @@
+<header class="app-header">
+  <div class="app-container app-header__inner">
+    <button type="button" class="app-header__btn" aria-label="મેનુ" (click)="menuClick.emit()">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <span class="app-header__brand">Micrologix ERP</span>
+
+    <div class="app-header__actions">
+      <button
+        type="button"
+        class="app-header__btn"
+        [attr.aria-label]="themeService.theme() === 'dark' ? 'Light mode' : 'Dark mode'"
+        (click)="themeService.toggle()"
+      >
+        <i class="bi" [class]="themeService.theme() === 'dark' ? 'bi-sun-fill' : 'bi-moon-stars-fill'"></i>
+      </button>
+      <button type="button" class="app-header__btn" aria-label="નોટિફિકેશન">
+        <i class="bi bi-bell-fill"></i>
+      </button>
+    </div>
+  </div>
+</header>

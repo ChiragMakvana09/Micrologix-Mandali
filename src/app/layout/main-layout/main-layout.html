@@ -1,0 +1,8 @@
+<app-header (menuClick)="panelOpen.set(true)" />
+<app-side-panel [open]="panelOpen()" (closed)="panelOpen.set(false)" />
+
+<main class="app-container app-main">
+  <router-outlet />
+</main>
+
+<app-bottom-menu />

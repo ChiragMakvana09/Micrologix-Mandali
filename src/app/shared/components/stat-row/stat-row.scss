@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.4rem 0;
+}
+
+:host(:not(:first-child)) .stat-row {
+  border-top: 1px dashed var(--app-border);
+}
+
+.stat-row__label {
+  color: var(--bs-secondary-color);
+}
+
+.stat-row__value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}

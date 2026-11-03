@@ -1,0 +1,28 @@
+<div class="dashboard">
+  <app-cif-select [cifs]="cifs()" [(selectedId)]="selectedId" />
+
+  @if (!selectedId()) {
+    <p class="dashboard__hint">
+      <i class="bi bi-arrow-up-circle"></i>
+      વિગતો જોવા માટે ઉપરથી CIF પસંદ કરો
+    </p>
+  } @else if (dashboard() === undefined) {
+    <p class="dashboard__hint text-danger">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      ડેટા લોડ થઈ શક્યો નથી. ફરી પ્રયત્ન કરો.
+    </p>
+  } @else if (dashboard(); as d) {
+    <div class="dashboard__grid">
+      <app-share-card [data]="d.share" />
+      <app-savings-card [data]="d.savings" />
+      <app-loan-card [data]="d.loan" />
+      <app-fd-card [data]="d.fd" />
+      <app-land-table class="dashboard__wide" [data]="d.land" />
+    </div>
+  } @else {
+    <div class="dashboard__hint" role="status">
+      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+      લોડ થઈ રહ્યું છે…
+    </div>
+  }
+</div>

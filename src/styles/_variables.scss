@@ -1,0 +1,10 @@
+// Design tokens shared by both themes.
+:root {
+  --app-primary: #4f46e5;
+  --app-primary-soft: rgba(79, 70, 229, 0.12);
+  --app-radius: 1rem;
+  --app-header-height: 3.5rem;
+  --app-bottom-menu-height: 4rem;
+  --app-max-width: 760px;
+  --bs-font-sans-serif: 'Noto Sans Gujarati', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}

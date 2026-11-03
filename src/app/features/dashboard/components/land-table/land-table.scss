@@ -1,0 +1,10 @@
+.land-table {
+  --bs-table-bg: transparent;
+  font-variant-numeric: tabular-nums;
+
+  th {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--bs-secondary-color);
+  }
+}

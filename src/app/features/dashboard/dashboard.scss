@@ -1,0 +1,30 @@
+.dashboard {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 576px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dashboard__wide {
+  @media (min-width: 576px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.dashboard__hint {
+  margin: 1.5rem 0;
+  text-align: center;
+  color: var(--bs-secondary-color);
+
+  .bi {
+    margin-right: 0.35rem;
+  }
+}

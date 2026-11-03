@@ -1,0 +1,35 @@
+.cif-select {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0.6rem 0.35rem 0.9rem;
+  background: var(--app-card-bg);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow);
+}
+
+.cif-select__icon {
+  color: var(--app-primary);
+  font-size: 1.3rem;
+}
+
+.cif-select__control {
+  flex: 1;
+  min-height: 2.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--bs-body-color);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.cif-select:focus-within {
+  border-color: var(--app-primary);
+  box-shadow: 0 0 0 0.2rem var(--app-primary-soft);
+}

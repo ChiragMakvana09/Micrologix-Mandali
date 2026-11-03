@@ -1,0 +1,10 @@
+<nav class="bottom-menu" aria-label="મુખ્ય મેનુ">
+  <div class="app-container bottom-menu__inner">
+    @for (item of items; track item.route) {
+      <a class="bottom-menu__item" [routerLink]="item.route" routerLinkActive="is-active">
+        <i class="bi" [class]="'bi-' + item.icon"></i>
+        <span>{{ item.label }}</span>
+      </a>
+    }
+  </div>
+</nav>

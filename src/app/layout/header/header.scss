@@ -1,0 +1,42 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  height: var(--app-header-height);
+  background: var(--app-header-bg);
+  color: var(--app-header-fg);
+}
+
+.app-header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header__brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.app-header__actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.app-header__btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 1.25rem;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.16);
+  }
+}

@@ -1,0 +1,16 @@
+<section class="stat-card">
+  <header class="stat-card__head">
+    <h2 class="stat-card__title">
+      @if (icon(); as icon) {
+        <span class="stat-card__icon"><i class="bi" [class]="'bi-' + icon"></i></span>
+      }
+      {{ title() }}
+    </h2>
+    @if (badge() !== undefined) {
+      <strong class="stat-card__badge">{{ badge() }}</strong>
+    }
+  </header>
+  <div class="stat-card__body">
+    <ng-content />
+  </div>
+</section>

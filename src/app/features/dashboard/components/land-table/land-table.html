@@ -1,0 +1,30 @@
+<app-stat-card title="કુલ જમીન" icon="geo-alt-fill" [badge]="data().totalLand">
+  <div class="table-responsive">
+    <table class="table land-table align-middle mb-0">
+      <thead>
+        <tr>
+          <th scope="col">ક્રમ</th>
+          <th scope="col">ગામ</th>
+          <th scope="col">સર્વે નંબર</th>
+          <th scope="col">૮-અ ન.</th>
+          <th scope="col" class="text-end">હેક્ટર આરે</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of data().records; track row.serial) {
+          <tr>
+            <td>{{ row.serial }}</td>
+            <td>{{ row.village }}</td>
+            <td>{{ row.surveyNo }}</td>
+            <td>{{ row.eightANo }}</td>
+            <td class="text-end">{{ row.hectareAare }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="5" class="text-center text-secondary py-3">કોઈ જમીન રેકોર્ડ નથી</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</app-stat-card>
