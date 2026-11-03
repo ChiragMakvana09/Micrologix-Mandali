@@ -1,1 +1,0 @@
-import{B as Oy}from"./chunk-B_CyJvqb.js";import{p as f}from"./main-BMSQTMV4.js";var m=class e{transform(r,n=0){return r==null||r===``?``:f(r,n)}static ɵfac=function(n){return new(n||e)};static ɵpipe=Oy({name:`inrNumber`,type:e,pure:!0})};export{m as t};
